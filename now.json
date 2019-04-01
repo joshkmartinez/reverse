@@ -1,0 +1,13 @@
+{
+  "name": "Reverse",
+  "alias": [
+    "reverse"
+  ],
+  "version": 2,
+  "builds": [
+    { "src": "api.js", "use": "@now/node-server" }
+  ],
+  "github": {
+    "silent": true
+  }
+}
