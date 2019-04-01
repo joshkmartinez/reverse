@@ -1,11 +1,6 @@
 var express = require('express')
 var app = express()
 const api = express.Router()
-function reverse(str) {
-  var splitString = str.split('')
-  var reverseArray = splitString.reverse()
-  return reverseArray.join('')
-}
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*')
   res.header(
@@ -15,14 +10,20 @@ app.use(function(req, res, next) {
   next()
 })
 api.get('/:param', (req, res) => {
-  //r=reverse(req.params.param)
-  res.send(reverse(req.params.param))
+  //fancy way of reversing a string
+  res.send(
+    req.params.param
+      .split('')
+      .reverse()
+      .join('')
+  )
 })
 api.get('/', (req, res) => {
   res.send(
     `
-    Put something after the / to get reverse it
-    
+Put something after the / to get reverse it \n
+🔃
+github.com/joshkmartinez/reverse
     `
   )
 })
