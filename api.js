@@ -9,6 +9,14 @@ app.use(function(req, res, next) {
   )
   next()
 })
+
+api.get('/rick', (req, res) => {
+  res.writeHead(302, {
+    Location: 'https://rickroll.now.sh'
+  })
+  res.end()
+})
+
 api.get('/:param', (req, res) => {
   //fancy way of reversing a string
   res.send(
