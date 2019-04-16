@@ -20,10 +20,7 @@ api.get('/rick', (req, res) => {
 api.get('/:param', (req, res) => {
   //fancy way of reversing a string
   res.send(
-    req.params.param
-      .split('')
-      .reverse()
-      .join('')
+    [...req.params.param].reverse().join('') //doesn't spit an emoji
   )
 })
 api.get('/', (req, res) => {
