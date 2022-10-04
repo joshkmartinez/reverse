@@ -26,7 +26,7 @@ api.get('/:param', (req, res) => {
 api.get('/', (req, res) => {
   res.send(
     `
-Put something after the / to get reverse it \n
+Put something after the / to reverse it \n
 🔃
 github.com/joshkmartinez/reverse
     `
